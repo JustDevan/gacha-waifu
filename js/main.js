@@ -9,16 +9,12 @@ const getImage = (url, success) => {
   fetch(url).then(res => res.json()).then(res => success(res))
 }
 
-getImage(url, res => {
-  mainImage.setAttribute('src', res.url)
-})
-
 cards.addEventListener('click', el => {
-  if(el.target.id == 'gacha') {
+  if (el.target.id == 'gacha') {
     getImage(url, res => {
       mainImage.setAttribute('src', res.url)
     })
-  }else if(el.target.id == 'nsfw') {
+  } else if (el.target.id == 'nsfw') {
     getImage(urlNSFW, res => {
       mainImage.setAttribute('src', res.url)
     })
