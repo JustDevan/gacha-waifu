@@ -4,7 +4,7 @@ const cards = document.getElementById('cards')
 const renderImage = target => {
   fetch(`https://api.waifu.pics/${target}/waifu`).then(res => res.json()).then(res => {
     mainImage.setAttribute('src',  res.url)
-  }
+  })
 }
 
 cards.addEventListener('click', el => {
